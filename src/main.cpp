@@ -23,7 +23,7 @@ int main() {
     
     double d = 123.456;
 
-
+    /// 이건 테스트로 작성한 주석입니다.
     my::Array::array<char> str;
     str._inner.set(my::decimal_char(d));
     print(str);

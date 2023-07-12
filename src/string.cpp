@@ -22,6 +22,22 @@ void strcat(char * dst, char * src){
 
 }
 
+void strcat(char * dst, char * src){
+    size_t dst_len = my::strlen(dst);
+    size_t src_len = my::strlen(src);
+    char * temp = new char[dst_len + src_len];
+    size_t idx = 0;
+    for (size_t i = 0; i < dst_len; i++, idx++){
+        temp[idx] = dst[i];
+    }
+    for (size_t i = 0; i < src_len; i++, idx++){
+        temp[idx] = src[i];
+    }
+    delete[] dst;
+    dst = new char[my::strlen(temp)];
+    my::memcpy(dst,temp,my::strlen(temp));
+
+}
 
 
 char * ntoc(int n, int limit){//정수를 문자열로 변환
